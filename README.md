@@ -21,11 +21,11 @@ Alternative you can start each component individually:
 
 ## Test Cases
 
-### `LazyQuery`
+### ✅ [`LazyQuery`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyQuery.tsx)
 
 Example of a working query with the same structure as the primary test case (`LazyQueryWithError`).
 
-### `LazyQueryWithError`
+### ❌ [`LazyQueryWithError`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyQueryWithError.tsx)
 
 Primary example of the bug, the network layer is setup to throw a JS error to simulate a network error. The expected behaviour would be for that network error to bubble up to the closest error boundary and the component rendering would be halted. Instead the error is ignored and the component is rendered with incomplete data that violates the type constraints.
 
@@ -33,10 +33,10 @@ This appears to only happen when `fetchPolicy` is set to either `store-and-netwo
 
 Curiously if you trigger another render in the component (e.g. by pressing a button to set some state) the error will be correctly handled, it's only on the initial render that the error is ignored.
 
-### `LazyQueryNoFragmentWithError`
+### ❌ [`LazyQueryNoFragmentWithError`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyQueryNoFragmentWithError.tsx)
 
 This example is the same as the above but without the `useFragment`. The error is correctly handled.
 
-### `LazyNetworkOnlyQueryWithError`
+### ✅ [`LazyNetworkOnlyQueryWithError`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyNetworkOnlyQueryWithError.tsx)
 
 This example is the same as the above but with `fetchPolicy` set to `network-only`. The error is correctly handled.
