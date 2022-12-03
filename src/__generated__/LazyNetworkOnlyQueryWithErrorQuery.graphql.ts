@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<c849fb84e19c69dfda97d44f2f800387>>
+ * @generated SignedSource<<9413883cff7d914d0affada8e10d41e3>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -43,59 +43,44 @@ const node: ConcreteRequest = {
     "selections": [
       {
         "alias": null,
-        "args": null,
-        "concreteType": "Address",
+        "args": [
+          {
+            "kind": "Literal",
+            "name": "id",
+            "value": "LazyNetworkOnlyQueryWithError"
+          }
+        ],
+        "concreteType": "Product",
         "kind": "LinkedField",
-        "name": "address",
+        "name": "product",
         "plural": false,
         "selections": [
           {
             "alias": null,
             "args": null,
             "kind": "ScalarField",
-            "name": "streetNumber",
+            "name": "id",
             "storageKey": null
           },
           {
             "alias": null,
             "args": null,
             "kind": "ScalarField",
-            "name": "streetName",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "city",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "state",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "country",
+            "name": "name",
             "storageKey": null
           }
         ],
-        "storageKey": null
+        "storageKey": "product(id:\"LazyNetworkOnlyQueryWithError\")"
       }
     ]
   },
   "params": {
-    "cacheID": "28d7cfdb1f3575eee1795e30211ed644",
+    "cacheID": "6490296a9036073ad46432369c070bbe",
     "id": null,
     "metadata": {},
     "name": "LazyNetworkOnlyQueryWithErrorQuery",
     "operationKind": "query",
-    "text": "query LazyNetworkOnlyQueryWithErrorQuery {\n  ...LazyNetworkOnlyQueryWithError_query\n}\n\nfragment LazyNetworkOnlyQueryWithError_query on Query {\n  address {\n    streetNumber\n    streetName\n    city\n    state\n    country\n  }\n}\n"
+    "text": "query LazyNetworkOnlyQueryWithErrorQuery {\n  ...LazyNetworkOnlyQueryWithError_query\n}\n\nfragment LazyNetworkOnlyQueryWithError_query on Query {\n  product(id: \"LazyNetworkOnlyQueryWithError\") {\n    id\n    name\n  }\n}\n"
   }
 };
 

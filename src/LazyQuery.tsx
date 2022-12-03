@@ -28,10 +28,9 @@ function LazyQueryInner(props: {query: LazyQuery_query$key}) {
   const query = useFragment(
     graphql`
       fragment LazyQuery_query on Query {
-        user {
+        product(id: "LazyQuery") {
           id
           name
-          email
         }
       }
     `,
@@ -42,3 +41,6 @@ function LazyQueryInner(props: {query: LazyQuery_query$key}) {
 
   return <Text style={{padding: 10}}>{JSON.stringify(query, null, 2)}</Text>;
 }
+
+LazyQuery.notes =
+  'This example is to verify normal queries work without issue, it has a `fetchPolicy` of `store-and-network`';

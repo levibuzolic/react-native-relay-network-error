@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<d483e038990070474e91f7792ec4abe5>>
+ * @generated SignedSource<<e0d1fb36159c6cf62f65999c5e4568a5>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -30,7 +30,13 @@ const node: ReaderFragment = {
   "selections": [
     {
       "alias": null,
-      "args": null,
+      "args": [
+        {
+          "kind": "Literal",
+          "name": "id",
+          "value": "LazyQueryWithError"
+        }
+      ],
       "concreteType": "Product",
       "kind": "LinkedField",
       "name": "product",
@@ -51,13 +57,13 @@ const node: ReaderFragment = {
           "storageKey": null
         }
       ],
-      "storageKey": null
+      "storageKey": "product(id:\"LazyQueryWithError\")"
     }
   ],
   "type": "Query",
   "abstractKey": null
 };
 
-(node as any).hash = "97f5382e80b3a107404ec32dbc04da8b";
+(node as any).hash = "25ab5e037d7e4ed663b0b740015baee6";
 
 export default node;

@@ -4,36 +4,31 @@ import {RelayProvider} from './environment';
 import Boundary from './Boundary';
 import LazyQuery from './LazyQuery';
 import LazyQueryWithError from './LazyQueryWithError';
+import LazyQueryNoFragmentWithError from './LazyQueryNoFragmentWithError';
 import LazyNetworkOnlyQueryWithError from './LazyNetworkOnlyQueryWithError';
+import Notes from './Notes';
 
-const EXAMPLES = [LazyQuery, LazyQueryWithError, LazyNetworkOnlyQueryWithError] as const;
+const EXAMPLES = [LazyQuery, LazyQueryWithError, LazyQueryNoFragmentWithError, LazyNetworkOnlyQueryWithError] as const;
 
 export default function Root() {
   const [index, setIndex] = React.useState<number | undefined>();
 
-  let body = (
-    <ScrollView key={index}>
-      {EXAMPLES.map((Example, index) => (
-        <View key={index} style={{borderBottomWidth: 1, borderColor: '#ddd'}}>
-          <TouchableOpacity onPress={() => setIndex(index)}>
-            <Text style={{padding: 15}}>{Example.name}</Text>
-          </TouchableOpacity>
-        </View>
-      ))}
-    </ScrollView>
-  );
+  let body: React.ReactNode = EXAMPLES.map((Example, index) => (
+    <View key={index} style={{borderBottomWidth: 1, borderColor: '#ddd'}}>
+      <TouchableOpacity onPress={() => setIndex(index)}>
+        <Text style={{padding: 15}}>{Example.name}</Text>
+      </TouchableOpacity>
+    </View>
+  ));
 
-  if (index !== undefined) {
-    const Example = EXAMPLES[index];
+  const Example = index !== undefined ? EXAMPLES[index] : undefined;
 
+  if (Example)
     body = (
-      <ScrollView key={index}>
-        <Boundary>
-          <Example />
-        </Boundary>
-      </ScrollView>
+      <Boundary>
+        <Example />
+      </Boundary>
     );
-  }
 
   return (
     <RelayProvider>
@@ -41,11 +36,14 @@ export default function Root() {
         <SafeAreaView>
           <View style={{padding: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
             <Button title="Back" onPress={() => setIndex(undefined)} disabled={index === undefined} />
-            <Text style={{padding: 5}}>{index != null ? EXAMPLES[index].name : 'Select an example'}</Text>
+            <Text style={{padding: 5}}>{Example?.name ?? 'Select an example'}</Text>
           </View>
         </SafeAreaView>
       </View>
-      {body}
+      <ScrollView>
+        {body}
+        {Example?.notes && <Notes>{Example.notes}</Notes>}
+      </ScrollView>
     </RelayProvider>
   );
 }

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<0bcde5fecdd19f8c623c79b76d95d92c>>
+ * @generated SignedSource<<7205a4dc895f373861d4c6770065e377>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -43,7 +43,13 @@ const node: ConcreteRequest = {
     "selections": [
       {
         "alias": null,
-        "args": null,
+        "args": [
+          {
+            "kind": "Literal",
+            "name": "id",
+            "value": "LazyQueryWithError"
+          }
+        ],
         "concreteType": "Product",
         "kind": "LinkedField",
         "name": "product",
@@ -64,17 +70,17 @@ const node: ConcreteRequest = {
             "storageKey": null
           }
         ],
-        "storageKey": null
+        "storageKey": "product(id:\"LazyQueryWithError\")"
       }
     ]
   },
   "params": {
-    "cacheID": "ad1070a34199ec3a2a1dccb223ffdf97",
+    "cacheID": "55a07e96e9dfc4ae11035051e8ec4a81",
     "id": null,
     "metadata": {},
     "name": "LazyQueryWithErrorQuery",
     "operationKind": "query",
-    "text": "query LazyQueryWithErrorQuery {\n  ...LazyQueryWithError_query\n}\n\nfragment LazyQueryWithError_query on Query {\n  product {\n    id\n    name\n  }\n}\n"
+    "text": "query LazyQueryWithErrorQuery {\n  ...LazyQueryWithError_query\n}\n\nfragment LazyQueryWithError_query on Query {\n  product(id: \"LazyQueryWithError\") {\n    id\n    name\n  }\n}\n"
   }
 };
 

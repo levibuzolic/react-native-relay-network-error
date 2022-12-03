@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<003379e2b29beffe8ffaf58eaf084a12>>
+ * @generated SignedSource<<cf978add603b50284ca6b52b56bc6402>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -43,10 +43,16 @@ const node: ConcreteRequest = {
     "selections": [
       {
         "alias": null,
-        "args": null,
-        "concreteType": "User",
+        "args": [
+          {
+            "kind": "Literal",
+            "name": "id",
+            "value": "LazyQuery"
+          }
+        ],
+        "concreteType": "Product",
         "kind": "LinkedField",
-        "name": "user",
+        "name": "product",
         "plural": false,
         "selections": [
           {
@@ -62,26 +68,19 @@ const node: ConcreteRequest = {
             "kind": "ScalarField",
             "name": "name",
             "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "email",
-            "storageKey": null
           }
         ],
-        "storageKey": null
+        "storageKey": "product(id:\"LazyQuery\")"
       }
     ]
   },
   "params": {
-    "cacheID": "023d600bb737017d5debc4441732b561",
+    "cacheID": "b177a2e9b205510c3a13fec25702c51f",
     "id": null,
     "metadata": {},
     "name": "LazyQueryQuery",
     "operationKind": "query",
-    "text": "query LazyQueryQuery {\n  ...LazyQuery_query\n}\n\nfragment LazyQuery_query on Query {\n  user {\n    id\n    name\n    email\n  }\n}\n"
+    "text": "query LazyQueryQuery {\n  ...LazyQuery_query\n}\n\nfragment LazyQuery_query on Query {\n  product(id: \"LazyQuery\") {\n    id\n    name\n  }\n}\n"
   }
 };
 

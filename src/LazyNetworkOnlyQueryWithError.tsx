@@ -28,12 +28,9 @@ function LazyNetworkOnlyQueryWithErrorInner(props: {query: LazyNetworkOnlyQueryW
   const query = useFragment(
     graphql`
       fragment LazyNetworkOnlyQueryWithError_query on Query {
-        address {
-          streetNumber
-          streetName
-          city
-          state
-          country
+        product(id: "LazyNetworkOnlyQueryWithError") {
+          id
+          name
         }
       }
     `,
@@ -44,3 +41,6 @@ function LazyNetworkOnlyQueryWithErrorInner(props: {query: LazyNetworkOnlyQueryW
 
   return <Text style={{padding: 10}}>{JSON.stringify(query, null, 2)}</Text>;
 }
+
+LazyNetworkOnlyQueryWithError.notes =
+  'This example throws a network error and has a `fetchPolicy` of `network-only`. Unlike the `store-and-network` example, the error boundary catches the network error immediately.';

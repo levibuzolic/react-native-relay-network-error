@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<704e36407c8d7d39449efe0e2ed624b8>>
+ * @generated SignedSource<<bdd9cac366879812671c7595b088242b>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -11,8 +11,7 @@
 import { Fragment, ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type LazyQuery_query$data = {
-  readonly user: {
-    readonly email: string;
+  readonly product: {
     readonly id: string;
     readonly name: string;
   };
@@ -31,10 +30,16 @@ const node: ReaderFragment = {
   "selections": [
     {
       "alias": null,
-      "args": null,
-      "concreteType": "User",
+      "args": [
+        {
+          "kind": "Literal",
+          "name": "id",
+          "value": "LazyQuery"
+        }
+      ],
+      "concreteType": "Product",
       "kind": "LinkedField",
-      "name": "user",
+      "name": "product",
       "plural": false,
       "selections": [
         {
@@ -50,22 +55,15 @@ const node: ReaderFragment = {
           "kind": "ScalarField",
           "name": "name",
           "storageKey": null
-        },
-        {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
-          "name": "email",
-          "storageKey": null
         }
       ],
-      "storageKey": null
+      "storageKey": "product(id:\"LazyQuery\")"
     }
   ],
   "type": "Query",
   "abstractKey": null
 };
 
-(node as any).hash = "68d20b7f1543afa09eb3dace694141d3";
+(node as any).hash = "62bce2d1bb1c4cf9c8a78d3a6341ab0d";
 
 export default node;

@@ -1,32 +1,12 @@
 type Query {
-  user: User!
-  product: Product!
-  address: Address!
+  product(id: ID!): Product!
 }
 
 interface Node {
   id: ID!
 }
 
-type User implements Node {
-  id: ID!
-  name: String! @fake(type: fullName)
-  email: String! @fake(type: email)
-}
-
 type Product implements Node {
   id: ID!
   name: String! @fake(type: productName)
-}
-
-type Address {
-  streetNumber: Int!
-  streetName: String! @fake(type: streetName)
-  city: String! @fake(type: city)
-  state: String! @fake(type: state)
-  country: String! @fake(type: country)
-}
-
-type SupportStatus {
-  online: Boolean!
 }
