@@ -16,10 +16,8 @@ async function fetchGraphQl(operation: RequestParameters, variables: Variables) 
 
   await sleep(500);
 
-  if (operation.name.includes('WithError')) {
-    console.log('[fetchGraphQl] Simulating a fake network error for', operation.name);
-    throw new Error('Simulated network error');
-  }
+  console.log('[fetchGraphQl] Simulating a fake network error for', operation.name);
+  throw new Error('Simulated network error');
 
   const response = await fetch('http://localhost:9002/graphql', {
     method: 'POST',

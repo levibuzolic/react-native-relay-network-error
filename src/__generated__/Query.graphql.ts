@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<cf978add603b50284ca6b52b56bc6402>>
+ * @generated SignedSource<<00e2966373799e663b78a08c69822ac5>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,13 +10,13 @@
 
 import { ConcreteRequest, Query } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type LazyQueryQuery$variables = {};
-export type LazyQueryQuery$data = {
-  readonly " $fragmentSpreads": FragmentRefs<"LazyQuery_query">;
+export type Query$variables = {};
+export type Query$data = {
+  readonly " $fragmentSpreads": FragmentRefs<"Query_query">;
 };
-export type LazyQueryQuery = {
-  response: LazyQueryQuery$data;
-  variables: LazyQueryQuery$variables;
+export type Query = {
+  response: Query$data;
+  variables: Query$variables;
 };
 
 const node: ConcreteRequest = {
@@ -24,12 +24,12 @@ const node: ConcreteRequest = {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "LazyQueryQuery",
+    "name": "Query",
     "selections": [
       {
         "args": null,
         "kind": "FragmentSpread",
-        "name": "LazyQuery_query"
+        "name": "Query_query"
       }
     ],
     "type": "Query",
@@ -39,17 +39,11 @@ const node: ConcreteRequest = {
   "operation": {
     "argumentDefinitions": [],
     "kind": "Operation",
-    "name": "LazyQueryQuery",
+    "name": "Query",
     "selections": [
       {
         "alias": null,
-        "args": [
-          {
-            "kind": "Literal",
-            "name": "id",
-            "value": "LazyQuery"
-          }
-        ],
+        "args": null,
         "concreteType": "Product",
         "kind": "LinkedField",
         "name": "product",
@@ -59,31 +53,24 @@ const node: ConcreteRequest = {
             "alias": null,
             "args": null,
             "kind": "ScalarField",
-            "name": "id",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
             "name": "name",
             "storageKey": null
           }
         ],
-        "storageKey": "product(id:\"LazyQuery\")"
+        "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "b177a2e9b205510c3a13fec25702c51f",
+    "cacheID": "590a811dd22fad76c943012dd0af2e01",
     "id": null,
     "metadata": {},
-    "name": "LazyQueryQuery",
+    "name": "Query",
     "operationKind": "query",
-    "text": "query LazyQueryQuery {\n  ...LazyQuery_query\n}\n\nfragment LazyQuery_query on Query {\n  product(id: \"LazyQuery\") {\n    id\n    name\n  }\n}\n"
+    "text": "query Query {\n  ...Query_query\n}\n\nfragment Query_query on Query {\n  product {\n    name\n  }\n}\n"
   }
 };
 
-(node as any).hash = "13522a9026fe647b76d5ed20a4d7754f";
+(node as any).hash = "536c4b11760b11a8d21b33cffc7fc963";
 
 export default node;

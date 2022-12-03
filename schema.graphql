@@ -1,12 +1,7 @@
 type Query {
-  product(id: ID!): Product!
+  product: Product!
 }
 
-interface Node {
-  id: ID!
-}
-
-type Product implements Node {
-  id: ID!
+type Product {
   name: String! @fake(type: productName)
 }

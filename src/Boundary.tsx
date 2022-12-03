@@ -18,8 +18,6 @@ export class ErrorBoundary extends React.Component<Props, State> {
       return (
         <Text style={{fontSize: 10, color: 'white', padding: 20, backgroundColor: '#911'}}>
           {error.name}: {error.message}
-          {'\n'}
-          {error.stack}
         </Text>
       );
 

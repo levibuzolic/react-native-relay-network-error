@@ -8,31 +8,14 @@ This issue exists in both production and development environments.
 
 ## Setup
 
-```
-yarn install
-yarn dev
-```
-
-This runs the [Relay Compiler](https://relay.dev/), [Expo](https://expo.dev/) and a [GraphQL server](https://github.com/IvanGoncharov/graphql-faker).
-
-Alternative you can start each component individually:
-
   * `yarn run relay` - Run the Relay Compiler
-  * `yarn run graphql` - Start a mock GraphQL server
   * `yarn run expo` - Get the app up and running (either native or web)
 
-## Test Cases
+Deploy web with `NODE_OPTIONS=--openssl-legacy-provider npx expo export:web`
 
-### ✅ [`LazyQuery`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyQuery.tsx)
+## [Minimal reproduction](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/Query.tsx)
 
-Example of a working query with the same structure as the primary test case (`LazyQueryWithError`), this is the only test case with a working network request just to validate the setup and environment.
-
-![Kapture 2022-12-03 at 22 14 00](https://user-images.githubusercontent.com/721323/205438238-706e4d4e-3be1-45a1-8f03-00f474e38e0d.gif)
-
-
-### ❌ [`LazyQueryWithError`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyQueryWithError.tsx)
-
-Primary example of the bug, the network layer is setup to throw a JS error to simulate a network error. 
+Primary example of the bug, the network layer is setup to throw a JS error to simulate a network error.
 
 **Expected behaviour:** The network error would bubble up and be caught by the parent error boundary and the component would never render to completion.
 
@@ -41,18 +24,3 @@ Primary example of the bug, the network layer is setup to throw a JS error to si
 This appears to only happen when `fetchPolicy` is set to either `store-and-network` or `store-or-network` *and* the data dependencies requiring network are specified in a `useFragment`.
 
 Curiously if you trigger another render in the component (e.g. by pressing a button to set some state) the error will then be correctly handled, it's only on the initial render that the error is ignored.
-
-![Kapture 2022-12-03 at 22 14 48](https://user-images.githubusercontent.com/721323/205438241-cb515379-64a8-4598-9d4f-c47d7fdbb66b.gif)
-
-### ✅ [`LazyQueryNoFragmentWithError`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyQueryNoFragmentWithError.tsx)
-
-This example is the same as the above but without the `useFragment`. The network error is handled as expected.
-
-![Kapture 2022-12-03 at 22 15 20](https://user-images.githubusercontent.com/721323/205438485-18ae6669-baac-4bb9-8ffe-7e173fb6a732.gif)
-
-
-### ✅ [`LazyNetworkOnlyQueryWithError`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyNetworkOnlyQueryWithError.tsx)
-
-This example is the same as the above but with `fetchPolicy` set to `network-only`. The error is correctly handled.
-
-![Kapture 2022-12-03 at 22 15 57](https://user-images.githubusercontent.com/721323/205438248-d07b3210-8a3d-41d4-b89a-88aaf4db2438.gif)

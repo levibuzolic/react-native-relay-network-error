@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<bdd9cac366879812671c7595b088242b>>
+ * @generated SignedSource<<44d5cea7f9c22a63c91547920a96beb4>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,33 +10,26 @@
 
 import { Fragment, ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type LazyQuery_query$data = {
+export type Query_query$data = {
   readonly product: {
-    readonly id: string;
     readonly name: string;
   };
-  readonly " $fragmentType": "LazyQuery_query";
+  readonly " $fragmentType": "Query_query";
 };
-export type LazyQuery_query$key = {
-  readonly " $data"?: LazyQuery_query$data;
-  readonly " $fragmentSpreads": FragmentRefs<"LazyQuery_query">;
+export type Query_query$key = {
+  readonly " $data"?: Query_query$data;
+  readonly " $fragmentSpreads": FragmentRefs<"Query_query">;
 };
 
 const node: ReaderFragment = {
   "argumentDefinitions": [],
   "kind": "Fragment",
   "metadata": null,
-  "name": "LazyQuery_query",
+  "name": "Query_query",
   "selections": [
     {
       "alias": null,
-      "args": [
-        {
-          "kind": "Literal",
-          "name": "id",
-          "value": "LazyQuery"
-        }
-      ],
+      "args": null,
       "concreteType": "Product",
       "kind": "LinkedField",
       "name": "product",
@@ -46,24 +39,17 @@ const node: ReaderFragment = {
           "alias": null,
           "args": null,
           "kind": "ScalarField",
-          "name": "id",
-          "storageKey": null
-        },
-        {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
           "name": "name",
           "storageKey": null
         }
       ],
-      "storageKey": "product(id:\"LazyQuery\")"
+      "storageKey": null
     }
   ],
   "type": "Query",
   "abstractKey": null
 };
 
-(node as any).hash = "62bce2d1bb1c4cf9c8a78d3a6341ab0d";
+(node as any).hash = "e731cc2d361f3a0c5d5518b9e57ca45b";
 
 export default node;
