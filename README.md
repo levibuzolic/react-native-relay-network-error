@@ -48,7 +48,7 @@ Curiously if you trigger another render in the component (e.g. by pressing a but
 
 This example is the same as the above but without the `useFragment`. The network error is handled as expected.
 
-![Kapture 2022-12-03 at 22 15 20](https://user-images.githubusercontent.com/721323/205438242-3b28086a-8de5-4164-a913-0cc02d05dea8.gif)
+![Kapture 2022-12-03 at 22 15 20](https://user-images.githubusercontent.com/721323/205438485-18ae6669-baac-4bb9-8ffe-7e173fb6a732.gif)
 
 
 ### ✅ [`LazyNetworkOnlyQueryWithError`](https://github.com/levibuzolic/react-native-relay-network-error/blob/main/src/LazyNetworkOnlyQueryWithError.tsx)
