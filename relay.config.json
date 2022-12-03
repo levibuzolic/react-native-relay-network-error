@@ -1,0 +1,17 @@
+{
+  "src": "src",
+  "schema": "schema.graphql",
+  "exclude": [
+    "**/node_modules/**",
+    "**/__mocks__/**",
+    "**/__generated__/**"
+  ],
+  "artifactDirectory": "src/__generated__",
+  "language": "typescript",
+  "customScalars": {
+    "BigInt": "string",
+    "DateTime": "string",
+    "ISO8601Date": "string",
+    "AmountInCents": "number"
+  }
+}
