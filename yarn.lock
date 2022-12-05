@@ -1530,10 +1530,10 @@
   dependencies:
     "@types/react" "^16"
 
-"@types/react-relay@^14.1.2":
-  version "14.1.2"
-  resolved "https://registry.npmjs.org/@types/react-relay/-/react-relay-14.1.2.tgz#0fa08fc8a7e196a0acdc1186fd983cdf3c7d559c"
-  integrity sha512-skFg+hBAi/two5qloHVF2GjX+wNK7mRwLev6YOl3Xo48YZhPt6akOYdpQHMioBx0WBDxXHByut9JpjAAH3HAHA==
+"@types/react-relay@^11.0.0":
+  version "11.0.3"
+  resolved "https://registry.npmjs.org/@types/react-relay/-/react-relay-11.0.3.tgz#95097049203f2f814e1330453d037841a2a310e5"
+  integrity sha512-hgKmTCswmZclKOqju/3pcVgJG3FtNrwfLLq4wtpZuQ/UJAyVeQ90SS6GiGZBr6hDZmcxNMIQCNyJ0YK5eE9Ceg==
   dependencies:
     "@types/react" "*"
     "@types/relay-runtime" "*"
@@ -1556,10 +1556,15 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/relay-runtime@*", "@types/relay-runtime@^14.1.5":
+"@types/relay-runtime@*":
   version "14.1.5"
   resolved "https://registry.npmjs.org/@types/relay-runtime/-/relay-runtime-14.1.5.tgz#9ce9e3a896f4d416171cdbf40e50c5ae97c56dde"
   integrity sha512-6g4/kX11381FWWxSoe7B96l/a+j+ePvfTE9HlCJbFoRz2qetC+pIecMrEmZWhJ6CprBq+m7MwhpGtTw/YyD87Q==
+
+"@types/relay-runtime@^11.0.0":
+  version "11.0.4"
+  resolved "https://registry.npmjs.org/@types/relay-runtime/-/relay-runtime-11.0.4.tgz#b22ac549b1c6790fb71b20acf3949d97c0cadf7e"
+  integrity sha512-dz3IuWmiIzrwQCbBeap1ispL8mvr6noRjQDeL7LLc4Y/kDJQWhfnwCIOkIt+ABNnrAtWZb8jK3b/oV6RGKXcfw==
 
 "@types/scheduler@*":
   version "0.16.2"
@@ -2216,14 +2221,12 @@ babel-plugin-react-native-web@~0.13.6:
   resolved "https://registry.npmjs.org/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.13.18.tgz#f0b640412b81acd02d8036b7a935ffb3ab446e4e"
   integrity sha512-f8pAxyKqXBNRIh8l4Sqju055BNec+DQlItdtutByYxULU0iJ1F7evIYE3skPKAkTB/xJH17l+n3Z8dVabGIIGg==
 
-babel-plugin-relay@^14.1.0:
-  version "14.1.0"
-  resolved "https://registry.npmjs.org/babel-plugin-relay/-/babel-plugin-relay-14.1.0.tgz#97128dd5f53f115c7d377d732c199a53eb48a1a7"
-  integrity sha512-1FTe0s07fGH/urhuVDWf9IPQd1UYcdvjCPPf5ixJJkK8+3cLAtseJ6dcyk1UnBSEDodRYwWLPhVOaGQIVvj3pw==
+babel-plugin-relay@^11.0.0:
+  version "11.0.2"
+  resolved "https://registry.npmjs.org/babel-plugin-relay/-/babel-plugin-relay-11.0.2.tgz#9ef5903226b12767114e12536c28566bddfe3aad"
+  integrity sha512-aUvTq/2wTSP43QMPbzLKXA5UTh8le1iXwZMH8Pi7rPnWzSLCaWfX6Jhy1gPVG2ADj2zjTciUsiGlOFoI3rP0Zw==
   dependencies:
     babel-plugin-macros "^2.0.0"
-    cosmiconfig "^5.0.5"
-    graphql "15.3.0"
 
 babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   version "7.0.0-beta.0"
@@ -4425,7 +4428,7 @@ fbjs@^0.8.4:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.30"
 
-fbjs@^3.0.2:
+fbjs@^3.0.0:
   version "3.0.4"
   resolved "https://registry.npmjs.org/fbjs/-/fbjs-3.0.4.tgz#e1871c6bd3083bac71ff2da868ad5067d37716c6"
   integrity sha512-ucV0tDODnGV3JCnnkmoszb5lf4bNpzjv80K41wd4k798Etq+UYD0y0TIfalLjZoKgjive6/adkRnszwapiDgBQ==
@@ -4795,7 +4798,7 @@ glob-parent@^5.1.1, glob-parent@^5.1.2, glob-parent@~5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
-glob@^7.0.3, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
+glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
   version "7.2.3"
   resolved "https://registry.npmjs.org/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
   integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
@@ -4874,11 +4877,6 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.3
   version "4.2.10"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.10.tgz#147d3a006da4ca3ce14728c7aefc287c367d7a6c"
   integrity sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==
-
-graphql@15.3.0:
-  version "15.3.0"
-  resolved "https://registry.npmjs.org/graphql/-/graphql-15.3.0.tgz#3ad2b0caab0d110e3be4a5a9b2aa281e362b5278"
-  integrity sha512-GTCJtzJmkFLWRfFJuoo9RWWa/FfamUHgiFosxi/X1Ani4AVWbeyBenZTNX6dM+7WSbbFfTo/25eh0LLkwHMw2w==
 
 graphql@^16.6.0:
   version "16.6.0"
@@ -5219,6 +5217,11 @@ immer@8.0.1:
   version "8.0.1"
   resolved "https://registry.npmjs.org/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
   integrity sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==
+
+immutable@~3.7.6:
+  version "3.7.6"
+  resolved "https://registry.npmjs.org/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
+  integrity sha512-AizQPcaofEtO11RZhPPHBOJRdo/20MKQF9mBLnVkBoyHi1/zXK8fzVdnEpSV9gxqtnh6Qomfp3F0xT5qP/vThw==
 
 import-fresh@^2.0.0:
   version "2.0.0"
@@ -8119,16 +8122,16 @@ react-refresh@^0.4.0:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.4.3.tgz#966f1750c191672e76e16c2efa569150cc73ab53"
   integrity sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA==
 
-react-relay@^14.1.0:
-  version "14.1.0"
-  resolved "https://registry.npmjs.org/react-relay/-/react-relay-14.1.0.tgz#2a2349d33ca6558543340a12b363ee2de3db06a6"
-  integrity sha512-U4oHb5wn1LEi17x3AcZOy66MXs83tnYbsK7/YE1/3cQKCPrXhyVUQbEOC9L7jMX659jtS1NACae+7b03bryMCQ==
+react-relay@^11.0.0:
+  version "11.0.2"
+  resolved "https://registry.npmjs.org/react-relay/-/react-relay-11.0.2.tgz#5f77e30e0d592f19c641e5dcc42f5d828bd16da5"
+  integrity sha512-RxtLBl8nxbaP26RcNDtKMrUBuJB5kFCCI4aZxnZByoncgovDgtewAsMiwcI8aDA8FjmXWRAtAAckh8DkMsMp7Q==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    fbjs "^3.0.2"
+    fbjs "^3.0.0"
     invariant "^2.2.4"
     nullthrows "^1.1.1"
-    relay-runtime "14.1.0"
+    relay-runtime "11.0.2"
 
 react-timer-mixin@^0.13.4:
   version "0.13.4"
@@ -8272,18 +8275,36 @@ relateurl@^0.2.7:
   resolved "https://registry.npmjs.org/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog==
 
-relay-compiler@^14.1.0:
-  version "14.1.0"
-  resolved "https://registry.npmjs.org/relay-compiler/-/relay-compiler-14.1.0.tgz#88e9c531eb14a6a31e6f14663982124d780bd1b6"
-  integrity sha512-P8+CXm+Hq96z5NNwYl7hyGo5GgvMZDs9mXBRv7txUbJO4Ql9mXio3+D9EX3VfevRWTuE4ahM37i3Ssx1H604vA==
+relay-compiler@^11.0.0:
+  version "11.0.2"
+  resolved "https://registry.npmjs.org/relay-compiler/-/relay-compiler-11.0.2.tgz#e1e09a1c881d169a7a524ead728ad6a89c7bd4af"
+  integrity sha512-nDVAURT1YncxSiDOKa39OiERkAr0DUcPmlHlg+C8zD+EiDo2Sgczf2R6cDsN4UcDvucYtkLlDLFErPwgLs8WzA==
+  dependencies:
+    "@babel/core" "^7.0.0"
+    "@babel/generator" "^7.5.0"
+    "@babel/parser" "^7.0.0"
+    "@babel/runtime" "^7.0.0"
+    "@babel/traverse" "^7.0.0"
+    "@babel/types" "^7.0.0"
+    babel-preset-fbjs "^3.3.0"
+    chalk "^4.0.0"
+    fb-watchman "^2.0.0"
+    fbjs "^3.0.0"
+    glob "^7.1.1"
+    immutable "~3.7.6"
+    invariant "^2.2.4"
+    nullthrows "^1.1.1"
+    relay-runtime "11.0.2"
+    signedsource "^1.0.0"
+    yargs "^15.3.1"
 
-relay-runtime@14.1.0, relay-runtime@^14.1.0:
-  version "14.1.0"
-  resolved "https://registry.npmjs.org/relay-runtime/-/relay-runtime-14.1.0.tgz#44b317101f560a16caea2eef8a52e254b03908fa"
-  integrity sha512-t2DR2hZviHrdEQrOvFqwmvRWvZ0SjI/r4bS5f3qvMyXt4g1kw3RTb2RNVmbKGg6zEQhf7Na/brdqE4roApmclQ==
+relay-runtime@11.0.2, relay-runtime@^11.0.0:
+  version "11.0.2"
+  resolved "https://registry.npmjs.org/relay-runtime/-/relay-runtime-11.0.2.tgz#c3650477d45665b9628b852b35f203e361ad55e8"
+  integrity sha512-xxZkIRnL8kNE1cxmwDXX8P+wSeWLR+0ACFyAiAhvfWWAyjXb+bhjJ2FSsRGlNYfkqaTNEuDqpnodQV1/fF7Idw==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    fbjs "^3.0.2"
+    fbjs "^3.0.0"
     invariant "^2.2.4"
 
 remove-trailing-separator@^1.0.1:
@@ -8754,6 +8775,11 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.7"
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
+
+signedsource@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/signedsource/-/signedsource-1.0.0.tgz#1ddace4981798f93bd833973803d80d52e93ad6a"
+  integrity sha512-6+eerH9fEnNmi/hyM1DXcRK3pWdoMQtlkQ+ns0ntzunjKqp5i3sKCc80ym8Fib3iaYhdJUOPdhlJWj1tvge2Ww==
 
 simple-plist@^1.0.0, simple-plist@^1.1.0:
   version "1.3.1"
@@ -10215,7 +10241,7 @@ yargs@^14.2.0:
     y18n "^4.0.0"
     yargs-parser "^15.0.1"
 
-yargs@^15.1.0:
+yargs@^15.1.0, yargs@^15.3.1:
   version "15.4.1"
   resolved "https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
