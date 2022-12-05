@@ -1,11 +1,9 @@
 import * as React from 'react';
 import {Text} from 'react-native';
 import {graphql, useFragment, useLazyLoadQuery} from 'react-relay';
-import type {Query} from './__generated__/Query.graphql';
-import type {Query_query$key} from './__generated__/Query_query.graphql';
 
 export default function Parent() {
-  const query = useLazyLoadQuery<Query>(
+  const query = useLazyLoadQuery(
     graphql`
       query Query {
         ...Query_query
@@ -20,7 +18,7 @@ export default function Parent() {
   return <Inner query={query} />;
 }
 
-function Inner(props: {query: Query_query$key}) {
+function Inner(props) {
   const query = useFragment(
     graphql`
       fragment Query_query on Query {

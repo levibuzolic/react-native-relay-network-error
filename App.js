@@ -3,12 +3,10 @@ import {Button, Text} from 'react-native';
 import Query from './src/Query';
 import {RelayProvider} from './src/environment';
 
-type Props = {children: React.ReactNode};
-type State = {error: Error | null};
-class ErrorBoundary extends React.Component<Props, State> {
-  state: State = {error: null};
+class ErrorBoundary extends React.Component {
+  state = {error: null};
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error) {
     return {error};
   }
 

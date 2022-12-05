@@ -1,17 +1,15 @@
 import * as React from 'react';
 import {RelayEnvironmentProvider} from 'react-relay';
-import {Environment, Network, Store, RecordSource, type Variables, type RequestParameters} from 'relay-runtime';
+import {Environment, Network, Store, RecordSource} from 'relay-runtime';
 
 const environment = new Environment({
   network: Network.create((operation, variables) => fetchGraphQl(operation, variables)),
   store: new Store(new RecordSource()),
 });
 
-export const RelayProvider = ({children}: {readonly children: React.ReactNode}) => (
-  <RelayEnvironmentProvider environment={environment} children={children} />
-);
+export const RelayProvider = ({children}) => <RelayEnvironmentProvider environment={environment} children={children} />;
 
-async function fetchGraphQl(operation: RequestParameters, variables: Variables) {
+async function fetchGraphQl(operation, variables) {
   console.log('[fetchGraphQl] Run', operation.name, variables);
 
   await sleep(500);
@@ -34,4 +32,4 @@ async function fetchGraphQl(operation: RequestParameters, variables: Variables) 
 }
 
 // Simulate network latency
-const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+const sleep = ms => new Promise(r => setTimeout(r, ms));

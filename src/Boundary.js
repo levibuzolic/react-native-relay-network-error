@@ -1,13 +1,10 @@
 import * as React from 'react';
 import {Text} from 'react-native';
 
-type Props = {children: React.ReactNode};
-type State = {error: Error | null};
+export class ErrorBoundary extends React.Component {
+  state = {error: null};
 
-export class ErrorBoundary extends React.Component<Props, State> {
-  state: State = {error: null};
-
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error) {
     return {error};
   }
 
@@ -27,7 +24,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
 export const Loading = () => <Text style={{padding: 20, backgroundColor: 'yellow'}}>Loading...</Text>;
 
-export default function Boundary({children}: Props) {
+export default function Boundary({children}) {
   return (
     <ErrorBoundary>
       <React.Suspense fallback={<Loading />}>{children}</React.Suspense>
