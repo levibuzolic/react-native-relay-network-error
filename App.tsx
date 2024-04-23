@@ -1,4 +1,3 @@
-import {SafeAreaView} from 'react-native';
 import Root from './src/Root';
 import {RelayProvider} from './src/environment';
 

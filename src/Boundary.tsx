@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Text} from 'react-native';
 
-type Props = {children: React.ReactNode};
-type State = {error: Error | null};
+type Props = {readonly children: React.ReactNode};
+type State = {readonly error: Error | null};
 
 export class ErrorBoundary extends React.Component<Props, State> {
   state: State = {error: null};

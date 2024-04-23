@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Text} from 'react-native';
 import {graphql, useFragment, useLazyLoadQuery} from 'react-relay';
 import type {LazyNetworkOnlyQueryWithErrorQuery} from './__generated__/LazyNetworkOnlyQueryWithErrorQuery.graphql';
 import type {LazyNetworkOnlyQueryWithError_query$key} from './__generated__/LazyNetworkOnlyQueryWithError_query.graphql';
@@ -22,7 +22,7 @@ export default function LazyNetworkOnlyQueryWithError() {
   return <LazyNetworkOnlyQueryWithErrorInner query={query} />;
 }
 
-function LazyNetworkOnlyQueryWithErrorInner(props: {query: LazyNetworkOnlyQueryWithError_query$key}) {
+function LazyNetworkOnlyQueryWithErrorInner(props: {readonly query: LazyNetworkOnlyQueryWithError_query$key}) {
   console.log('LazyNetworkOnlyQueryWithErrorInner.render');
 
   const query = useFragment(

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Text} from 'react-native';
 import {graphql, useFragment, useLazyLoadQuery} from 'react-relay';
 import type {LazyQueryQuery} from './__generated__/LazyQueryQuery.graphql';
 import type {LazyQuery_query$key} from './__generated__/LazyQuery_query.graphql';
@@ -22,7 +22,7 @@ export default function LazyQuery() {
   return <LazyQueryInner query={query} />;
 }
 
-function LazyQueryInner(props: {query: LazyQuery_query$key}) {
+function LazyQueryInner(props: {readonly query: LazyQuery_query$key}) {
   console.log('LazyQueryInner.render');
 
   const query = useFragment(
